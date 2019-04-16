@@ -23,19 +23,19 @@ namespace GradeBook.GradeBooks
             char result = 'F';
             var treshold = (int)Math.Ceiling(Students.Count * .2);
             var listAverageGrades = Students.OrderByDescending(s => s.AverageGrade).Select(s => s.AverageGrade).ToList();
-            if(averageGrade > listAverageGrades[treshold - 1])
+            if(averageGrade >= listAverageGrades[treshold - 1])
             {
                 result = 'A';
             }
-            else if (averageGrade > listAverageGrades[treshold*2 - 1])
+            else if (averageGrade >= listAverageGrades[treshold*2 - 1])
             {
                 result = 'B';
             }
-            else if(averageGrade > listAverageGrades[treshold*3 - 1])
+            else if(averageGrade >= listAverageGrades[treshold*3 - 1])
             {
                 result = 'C';
             }
-            else if(averageGrade > listAverageGrades[treshold*4 - 1])
+            else if(averageGrade >= listAverageGrades[treshold*4 - 1])
             {
                 result = 'D';
             }
